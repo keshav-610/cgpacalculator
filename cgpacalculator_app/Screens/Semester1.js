@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
     },
     subject_name:{
       color:"#dedad9",
-      fontSize:20,
+      fontSize:17,
       fontWeight:"500",
     },
     picker:{
@@ -260,7 +260,7 @@ const styles = StyleSheet.create({
     result_gpa:{
       marginTop:20,
       color:"white",
-      fontSize:20,
+      fontSize:17,
       fontWeight:"500"
     }
 })
