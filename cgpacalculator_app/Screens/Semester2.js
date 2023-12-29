@@ -189,26 +189,6 @@ PickerRef.current.blur();
         </TouchableOpacity>
         <Text style={styles.result_gpa}>{gpa2}</Text>
       </SafeAreaView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </SafeAreaView>
    </ScrollView>
   )
