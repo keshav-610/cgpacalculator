@@ -18,7 +18,7 @@ const Semester1 = () => {
   const [gpa1,set_gpa1]=useState('0')
 
 
-  const Cgpa=()=>{
+  const Cgpa1=()=>{
     const res_ce=parseInt(ce)*3
     const res_mat=parseInt(mat)*4
     const res_phy=parseInt(phy)*3
@@ -34,7 +34,7 @@ const Semester1 = () => {
     else{
     const gpa1_sum=res_ce+res_mat+res_phy+res_chem+res_py+res_eg+res_bsl+res_epl;
     const gpa1_final= gpa1_sum/25;
-    set_gpa1("Your GPA is "+gpa1_final);
+    set_gpa1("Your GPA is "+gpa1_final.toFixed(1));
     }
   };
 
@@ -187,7 +187,7 @@ const opendrawer=()=>{
         </SafeAreaView>
 
         <SafeAreaView style={styles.end}>
-          <TouchableOpacity style={styles.button} onPress={Cgpa}><Text style={styles.button_text}>Calculate</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={Cgpa1}><Text style={styles.button_text}>Calculate</Text></TouchableOpacity>
           <Text style={styles.result_gpa}>{gpa1}</Text>
         </SafeAreaView>
 
@@ -207,10 +207,11 @@ const styles = StyleSheet.create({
         marginTop:5
     },
     header:{
-      marginStart:20,
+      marginTop:3,
+      marginStart:10,
       color:"white",
-      fontSize:35,
-      fontWeight:"700"
+      fontSize:32,
+      fontWeight:"600"
     },
     header_align:{
       display:"flex",
