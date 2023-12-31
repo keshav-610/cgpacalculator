@@ -15,7 +15,7 @@ const Semester2 = () => {
   const [prc,set_prc]=useState('0');
   const [itel,set_itel]=useState('0');
   const [prcl,set_prcl]=useState('0');
-  const [gpa2,set_gpa2]=useState('0');
+  const [gpa2,set_gpa2]=useState('');
 
   const Cgpa2=()=>{
     const res_te=parseInt(te)*3

@@ -16,7 +16,7 @@ const Semester3 = () => {
   const [poc,set_poc]=useState('0')
   const [dscl,set_dscl]=useState('0')
   const [dlcl,set_dlcl]=useState('0')
-  const [gpa3,set_gpa3]=useState('0')
+  const [gpa3,set_gpa3]=useState('')
 
   const Cgpa3=()=>{
     const res_dma=parseInt(dma)*4

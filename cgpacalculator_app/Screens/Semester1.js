@@ -15,7 +15,7 @@ const Semester1 = () => {
   const [eg,set_eg]=useState('0');
   const [bsl,set_bsl]=useState('0');
   const [epl,set_epl]=useState('0');
-  const [gpa1,set_gpa1]=useState('0')
+  const [gpa1,set_gpa1]=useState('')
 
 
   const Cgpa1=()=>{

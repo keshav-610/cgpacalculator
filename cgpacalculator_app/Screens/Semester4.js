@@ -17,7 +17,7 @@ const Semester4 = () => {
   const [osl,set_osl]=useState('0')
   const [dbmsl,set_dbmsl]=useState('0')
   const [mp,set_mp]=useState('0')
-  const [gpa4,set_gpa4]=useState('0')
+  const [gpa4,set_gpa4]=useState('')
 
   const Cgpa4=()=>{
     const res_pqt=parseInt(pqt)*4
