@@ -18,13 +18,31 @@ const Semester5 = () => {
   const [cns,set_cns]=useState('0')
   const [nl,set_nl]=useState('0')
   const [ts,set_ts]=useState('0')
-  const [iotl,set_iotl]=useState('0')
-  const [mpmcl,set_mpmcl]=useState('0')
   const [gpa5,set_gpa5]=useState('')
 
-  const Cgpa5=()=>{
+  const Cgpa5 = () => {
+    const res_iot = parseInt(iot) * 4;
+    const res_toc = parseInt(toc) * 3;
+    const res_cn = parseInt(cn) * 3;
+    const res_mpmc = parseInt(mpmc) * 4;
+    const res_st = parseInt(st) * 3;
+    const res_coi = parseInt(coi) * 0;
+    const res_cns = parseInt(cns) * 3;
+    const res_nl = parseInt(nl) * 2;
+    const res_ts = parseInt(ts) * 1;
 
-  }
+    if(res_cns==0){
+      const gpa5_sum=res_iot+res_toc+res_cn+res_mpmc+res_st+res_coi+res_nl+res_ts
+      const gpa5_final=gpa5_sum/20
+      set_gpa5("Your GPA is "+gpa5_final.toFixed(1));
+    }
+    else{
+      const gpa5_sum=res_iot+res_toc+res_cn+res_mpmc+res_st+res_coi+res_nl+res_ts+res_cns
+      const gpa5_final=gpa5_sum/23
+      set_gpa5("Your GPA is "+gpa5_final.toFixed(1));
+    }
+  
+  };
 
   const PickerRef=useRef();
 
@@ -185,38 +203,10 @@ const Semester5 = () => {
               <Picker.Item label="C" value="5"/>
           </Picker>
         </SafeAreaView>
-        <SafeAreaView style={styles.subject}>
-          <Text style={styles.subject_name}>Internet of Things Laboratory (Optional)</Text>
-          <Picker ref={PickerRef}
-          selectedValue={iotl}
-          onValueChange={(itemvalue)=>set_iotl(itemvalue)}
-          style={styles.picker}>
-              <Picker.Item label="Select an Option" value="0"/>
-              <Picker.Item label="O" value="10"/>
-              <Picker.Item label="A+" value="9"/>
-              <Picker.Item label="A" value="8"/>
-              <Picker.Item label="B+" value="7"/>
-              <Picker.Item label="B" value="6"/>
-              <Picker.Item label="C" value="5"/>
-          </Picker>
-        </SafeAreaView>
-        <SafeAreaView style={styles.subject}>
-          <Text style={styles.subject_name}>Microprocessor and Microcontroller Laboratory (Optional)</Text>
-          <Picker ref={PickerRef}
-          selectedValue={mpmcl}
-          onValueChange={(itemvalue)=>set_mpmcl(itemvalue)}
-          style={styles.picker}>
-            <Picker.Item label="Select an Option" value="0"/>
-              <Picker.Item label="O" value="10"/>
-              <Picker.Item label="A+" value="9"/>
-              <Picker.Item label="A" value="8"/>
-              <Picker.Item label="B+" value="7"/>
-              <Picker.Item label="B" value="6"/>
-              <Picker.Item label="C" value="5"/>
-          </Picker>
-        </SafeAreaView>
+
+        
         <SafeAreaView style={styles.end}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={Cgpa5}>
             <Text style={styles.button_text}>Calculate</Text>
           </TouchableOpacity>
           <Text style={styles.result_gpa}>{gpa5}</Text>
